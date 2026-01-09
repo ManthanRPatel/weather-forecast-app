@@ -20,13 +20,12 @@ Before running the project, make sure you have the following installed:
 ## Project Structure
 
 ```
-
 weather-forecast-app/
 │
 ├── backend/
 │   ├── config/
 │   │   ├── env.js             # Environment variables
-│   │   └── redis.js           # Redis client configuration
+│   │   └── redis.js           # Redis client
 │   ├── routes/
 │   │   └── weather.js         # Weather API routes
 │   └── server.js              # Express server entry point
@@ -37,18 +36,29 @@ weather-forecast-app/
 │   │   ├── api/
 │   │   │   └── weather.js     # API helper to call backend
 │   │   ├── components/
-│   │   │   ├── ForecastCard.jsx
-│   │   │   └── AvgNightTemp.jsx
+│   │   │   ├── AvgNightTemp.css
+│   │   │   ├── AvgNightTemp.jsx
+│   │   │   ├── ForecastCard.css
+│   │   │   └── ForecastCard.jsx
+│   │   ├── config/
+│   │   │   └── api.js
 │   │   ├── pages/
-│   │   │   └── Home.jsx       # Main frontend page
-│   │   └── main.jsx           # React entry point
-│   └── index.html
+│   │   │   ├── Home.css
+│   │   │   └── Home.jsx
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── package.json
+│   ├── README.md
+│   ├── eslint.config.js
+│   └── vite.config.js
 │
 ├── node_modules/
-│
 ├── .env                       # Environment variables (frontend & backend)
 ├── .gitignore
-├── package.json                # Root or frontend package.json (if monorepo)
+├── package.json               # Root or frontend package.json (if monorepo)
 ├── package-lock.json
 ├── vite.config.js
 └── README.md
@@ -59,28 +69,22 @@ weather-forecast-app/
 
 ## Backend Setup
 
-1. Navigate to the backend folder:
-
-```bash
-cd backend
-````
-
-2. Install dependencies:
+1. Install Backend dependencies:
 
 ```bash
 npm install
 ```
 
-3. Create a `.env` file in `backend/`:
+2. Create a `.env` file:
 
 ```env
 WEATHER_API_URL=https://wxdata.apdtest.net/api/getweather
 REDIS_URL=redis://127.0.0.1:6379
-CACHE_EXPIRY=60  # seconds
+CACHE_EXPIRY=1  # seconds
 PORT=3000
 ```
 
-4. Start the backend server in development mode:
+3. Start the backend server in development mode:
 
 ```bash
 npm run dev
@@ -151,7 +155,7 @@ npm run dev
 
 ## Scripts
 
-### Backend (`backend/package.json`)
+### Backend (`package.json`)
 
 ```json
 "scripts": {
@@ -183,12 +187,3 @@ npm run dev
   * Ignores invalid or missing data
   * Calculates first 7 unique days and average night temp correctly
 * Frontend uses React functional components and **MUI** only for the loading spinner (can be removed if custom CSS is used)
-
----
-
-## Next Steps / Enhancements
-
-* Add **error handling UI** for frontend if backend fails
-* Implement **automatic refresh** every N minutes on frontend
-* Replace MUI spinner with custom CSS loader
-* Add **unit tests** for backend routes
