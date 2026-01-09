@@ -56,11 +56,10 @@ weather-forecast-app/
 │   └── vite.config.js
 │
 ├── node_modules/
-├── .env                       # Environment variables (frontend & backend)
+├── .env                       # Environment variables (for backend)
 ├── .gitignore
-├── package.json               # Root or frontend package.json (if monorepo)
+├── package.json               # Root Backend package.json
 ├── package-lock.json
-├── vite.config.js
 └── README.md
 
 ````

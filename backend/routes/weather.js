@@ -6,17 +6,15 @@ const {
   CACHE_EXPIRY,
 } = require("../config/env");
 
+const CACHE_KEY = "weather:processed";
+
 const router = Router();
 
 /**
  * Validate API response structure
  */
 const isValidWeatherResponse = (data) => {
-  return (
-    data &&
-    Array.isArray(data.longterm) &&
-    data.longterm.length >= 10
-  );
+  return (data && Array.isArray(data.longterm) && data.longterm.length >= 10);
 };
 
 /**
@@ -42,9 +40,8 @@ const getTodayDateString = () => {
 
 router.get("/", async (req, res) => {
   try {
-    const CACHE_KEY = "weather:processed";
 
-    // // ---------- 1️⃣ Try Redis first ----------
+    // // ---------- 1️⃣ Try Redis first  // Not currently using cache. Because of frequent data changes.
     // const cachedData = await redisClient.get(CACHE_KEY);
     // if (cachedData) {
     //   return res.json({

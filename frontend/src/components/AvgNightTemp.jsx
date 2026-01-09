@@ -18,25 +18,3 @@ const AvgNightTemp = ({ temperature }) => {
 };
 
 export default AvgNightTemp;
-
-
-// import { Card, CardContent, Typography } from "@mui/material";
-// import "./AvgNightTemp.css";
-
-// const AvgNightTemp = ({ value }) => {
-//   return (
-//     <Card className="avg-card">
-//       <CardContent>
-//         <Typography className="avg-title">
-//           Average Night Temperature (10 days)
-//         </Typography>
-
-//         <Typography className="avg-value">
-//           {value !== null ? `${value}°C` : "N/A"}
-//         </Typography>
-//       </CardContent>
-//     </Card>
-//   );
-// };
-
-// export default AvgNightTemp;
