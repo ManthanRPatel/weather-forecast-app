@@ -1,0 +1,9 @@
+.home-container {
+  padding: 24px;
+}
+
+.forecast-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+}

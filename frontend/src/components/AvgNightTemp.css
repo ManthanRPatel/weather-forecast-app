@@ -1,0 +1,15 @@
+.avg-night-card {
+  margin-top: 24px;
+  border-radius: 14px;
+  background: #0d47a1;
+  color: white;
+}
+
+.avg-night-title {
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+.avg-night-value {
+  font-weight: 700;
+}
